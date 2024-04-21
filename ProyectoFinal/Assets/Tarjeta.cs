@@ -30,8 +30,8 @@ namespace ProyectoFinal_namespace
         {
             nombreLabel.text = myIndividuo.Nombre;
             apellidoLabel.text = myIndividuo.Apellido;
-            atqDef.AtqEstado = 2;
-            atqDef.DefEstado = 1;
+            atqDef.AtqEstado = myIndividuo.Ataque;
+            atqDef.DefEstado = myIndividuo.Defensa;
         }
     }
 }

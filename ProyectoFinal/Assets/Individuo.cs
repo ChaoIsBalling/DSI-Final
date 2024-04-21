@@ -67,10 +67,12 @@ namespace ProyectoFinal_namespace
             }
         }
 
-        public Individuo(string nombre, string apellido)
+        public Individuo(string nombre, string apellido, int ataque, int defensa)
         {
             this.nombre = nombre;
             this.apellido = apellido;
+            this.ataque = ataque;
+            this.defensa = defensa;
         }
     }
 }

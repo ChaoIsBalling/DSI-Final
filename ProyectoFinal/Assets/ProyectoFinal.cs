@@ -16,6 +16,8 @@ namespace ProyectoFinal_namespace
         Individuo individuoSelec;
         List<Individuo> lista_individuos = new List<Individuo>();
         Label titulo;
+        IntegerField input_ataque;
+        IntegerField input_defensa;
 
         bool userSelect = false;
 
@@ -47,6 +49,9 @@ namespace ProyectoFinal_namespace
             titulo.style.unityTextOutlineColor = new Color(0f, 0f, 0f);
             titulo.text = @"<color=""white""><gradient=""Titulo"">Se Reclutan Aventureros</gradient>";
 
+            input_ataque = root.Q<IntegerField>("InputAtaque");
+            input_defensa = root.Q<IntegerField>("InputDefensa");
+
             img_parrot = Resources.Load<Sprite>("Imagenes/parrot");
             img_penguin = Resources.Load<Sprite>("Imagenes/penguin");
             img_walrus= Resources.Load<Sprite>("Imagenes/walrus");
@@ -58,6 +63,8 @@ namespace ProyectoFinal_namespace
             parrot.RegisterCallback<ClickEvent>(SeleccionLoro);
             penguin.RegisterCallback<ClickEvent>(SeleccionPinguino);
             walrus.RegisterCallback<ClickEvent>(SeleccionFoca);
+            input_ataque.RegisterCallback<ChangeEvent<int>>(CambioAtaque);
+            input_defensa.RegisterCallback<ChangeEvent<int>>(CambioDefensa);
         }
         void SeleccionLoro(ClickEvent evt)
         {
@@ -97,7 +104,7 @@ namespace ProyectoFinal_namespace
                 tarjeta_borde_negro();
                 tarjeta_borde_blanco(tarjetaPlantilla);
 
-                Individuo individuo = new Individuo(input_nombre.value, input_apellido.value);
+                Individuo individuo = new Individuo(input_nombre.value, input_apellido.value, input_ataque.value, input_defensa.value);
                 Tarjeta tarjeta = new Tarjeta(tarjetaPlantilla, individuo);
                 individuoSelec = individuo;
 
@@ -112,6 +119,8 @@ namespace ProyectoFinal_namespace
             Debug.Log(individuoSelec.Nombre);
             input_nombre.SetValueWithoutNotify(individuoSelec.Nombre);
             input_apellido.SetValueWithoutNotify(individuoSelec.Apellido);
+            input_ataque.SetValueWithoutNotify(individuoSelec.Ataque);
+            input_defensa.SetValueWithoutNotify(individuoSelec.Defensa);
             toggleModificar.value = true;
 
             tarjeta_borde_negro();
@@ -131,6 +140,22 @@ namespace ProyectoFinal_namespace
             if (toggleModificar.value)
             {
                 individuoSelec.Apellido = evt.newValue;
+            }
+        }
+
+        void CambioAtaque(ChangeEvent<int> evt)
+        {
+            if (toggleModificar.value)
+            {
+                individuoSelec.Ataque = evt.newValue;
+            }
+        }
+
+        void CambioDefensa(ChangeEvent<int> evt)
+        {
+            if (toggleModificar.value)
+            {
+                individuoSelec.Defensa = evt.newValue;
             }
         }
 
