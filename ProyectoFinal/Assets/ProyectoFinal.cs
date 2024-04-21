@@ -15,6 +15,7 @@ namespace ProyectoFinal_namespace
         TextField input_apellido;
         Individuo individuoSelec;
         List<Individuo> lista_individuos = new List<Individuo>();
+        Label titulo;
 
         bool userSelect = false;
 
@@ -39,6 +40,12 @@ namespace ProyectoFinal_namespace
             parrot = root.Q<VisualElement>("parrot");
             penguin = root.Q<VisualElement>("penguin");
             walrus = root.Q<VisualElement>("walrus");
+
+            titulo = root.Q<Label>("Titulo");
+            titulo.style.fontSize = 150;
+            titulo.style.unityTextOutlineWidth = 2;
+            titulo.style.unityTextOutlineColor = new Color(0f, 0.4156863f, 0.01568628f);
+            titulo.text = @"<color=""white""><gradient=""Titulo"">Se Reclutan Aventureros</gradient>";
 
             img_parrot = Resources.Load<Sprite>("Imagenes/parrot");
             img_penguin = Resources.Load<Sprite>("Imagenes/penguin");
