@@ -1,23 +1,28 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Lab6.uss?fileID=7433441132597879392&amp;guid=d3918f6ecdc98cc40be8e1897e7c8288&amp;type=3#Lab6" />
-    <ui:VisualElement name="Contenedor" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement name="Izda" style="flex-grow: 1; background-color: rgb(46, 135, 3); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
-            <ui:VisualElement name="top" style="flex-grow: 1; flex-direction: row;">
-                <ui:VisualElement name="parrot" style="flex-grow: 1; background-image: resource(&apos;Imagenes/parrot&apos;);" />
-                <ui:VisualElement name="penguin" style="flex-grow: 1; background-image: resource(&apos;Imagenes/penguin&apos;);" />
-                <ui:VisualElement name="walrus" style="flex-grow: 1; background-image: resource(&apos;Imagenes/walrus&apos;);" />
-            </ui:VisualElement>
-            <ui:VisualElement name="mid-nombre" style="flex-grow: 1;">
-                <ui:TextField picking-mode="Ignore" label="Nombre" value="filler text" name="InputNombre" />
-            </ui:VisualElement>
-            <ui:VisualElement name="mid-apellido" style="flex-grow: 1;">
-                <ui:TextField picking-mode="Ignore" label="Apellido" value="filler text" name="InputApellido" />
-            </ui:VisualElement>
-            <ui:VisualElement name="botton" style="flex-grow: 1;">
-                <ui:Toggle label="Modificar" name="ToggleModificar" />
-                <ui:Button text="Crear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BotonCrear" style="width: 50px; height: 25px; align-items: stretch;" />
-            </ui:VisualElement>
+    <ui:VisualElement name="Contenedor" style="flex-grow: 1; flex-direction: column; background-image: resource(&apos;Imagenes/Pagina&apos;);">
+        <ui:VisualElement name="Arriba" style="flex-grow: 1; height: auto;">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Titulo" />
         </ui:VisualElement>
-        <ui:VisualElement name="Dcha" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;" />
+        <ui:VisualElement name="Abajo" style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="Izda" style="flex-grow: 1; background-color: rgb(46, 135, 3); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px;">
+                <ui:VisualElement name="top" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="parrot" style="flex-grow: 1; background-image: resource(&apos;Imagenes/parrot&apos;);" />
+                    <ui:VisualElement name="penguin" style="flex-grow: 1; background-image: resource(&apos;Imagenes/penguin&apos;);" />
+                    <ui:VisualElement name="walrus" style="flex-grow: 1; background-image: resource(&apos;Imagenes/walrus&apos;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="mid-nombre" style="flex-grow: 1;">
+                    <ui:TextField picking-mode="Ignore" label="Nombre" value="filler text" name="InputNombre" />
+                </ui:VisualElement>
+                <ui:VisualElement name="mid-apellido" style="flex-grow: 1;">
+                    <ui:TextField picking-mode="Ignore" label="Apellido" value="filler text" name="InputApellido" />
+                </ui:VisualElement>
+                <ui:VisualElement name="botton" style="flex-grow: 1;">
+                    <ui:Toggle label="Modificar" name="ToggleModificar" />
+                    <ui:Button text="Crear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BotonCrear" style="width: 50px; height: 25px; align-items: stretch;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Dcha" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
