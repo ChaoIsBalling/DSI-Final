@@ -16,6 +16,16 @@ namespace ProyectoFinal_namespace
         Individuo individuoSelec;
         List<Individuo> lista_individuos = new List<Individuo>();
 
+        bool userSelect = false;
+
+        VisualElement parrot;
+        VisualElement penguin;
+        VisualElement walrus;
+        VisualElement miTarjeta;
+        Sprite img_parrot;
+        Sprite img_penguin;
+        Sprite img_walrus;
+
         private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -26,18 +36,55 @@ namespace ProyectoFinal_namespace
             botonCrear = root.Q<Button>("BotonCrear");
             toggleModificar = root.Q<Toggle>("ToggleModificar");
 
+            parrot = root.Q<VisualElement>("parrot");
+            penguin = root.Q<VisualElement>("penguin");
+            walrus = root.Q<VisualElement>("walrus");
+
+            img_parrot = Resources.Load<Sprite>("Imagenes/parrot");
+            img_penguin = Resources.Load<Sprite>("Imagenes/penguin");
+            img_walrus= Resources.Load<Sprite>("Imagenes/walrus");
+
             contenedor_dcha.RegisterCallback<ClickEvent>(seleccionTarjeta);
             botonCrear.RegisterCallback<ClickEvent>(NuevaTarjeta);
             input_nombre.RegisterCallback<ChangeEvent<string>>(CambioNombre);
             input_apellido.RegisterCallback<ChangeEvent<string>>(CambioApellido);
+            parrot.RegisterCallback<ClickEvent>(SeleccionLoro);
+            penguin.RegisterCallback<ClickEvent>(SeleccionPinguino);
+            walrus.RegisterCallback<ClickEvent>(SeleccionFoca);
+        }
+        void SeleccionLoro(ClickEvent evt)
+        {
+            if (userSelect && toggleModificar.value)
+            {
+                VisualElement foto = miTarjeta.Q("cabeza");
+                foto.style.backgroundImage = new StyleBackground(img_parrot);
+            }
+        }
+        void SeleccionPinguino(ClickEvent evt)
+        {
+            if (userSelect && toggleModificar.value)
+            {
+                VisualElement foto = miTarjeta.Q("cabeza");
+                foto.style.backgroundImage = new StyleBackground(img_penguin);
+            }
+        }
+        void SeleccionFoca(ClickEvent evt)
+        {
+            if (userSelect && toggleModificar.value)
+            {
+                VisualElement foto = miTarjeta.Q("cabeza");
+                foto.style.backgroundImage = new StyleBackground(img_walrus);
+            }
         }
 
         void NuevaTarjeta(ClickEvent evt)
         {
             if (!toggleModificar.value)
             {
+                userSelect = true;
                 VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Tarjeta");
                 VisualElement tarjetaPlantilla = plantilla.Instantiate();
+                miTarjeta = tarjetaPlantilla;
 
                 contenedor_dcha.Add(tarjetaPlantilla);
                 tarjeta_borde_negro();
@@ -53,7 +100,7 @@ namespace ProyectoFinal_namespace
 
         void seleccionTarjeta(ClickEvent e)
         {
-            VisualElement miTarjeta = e.target as VisualElement;
+            miTarjeta = e.target as VisualElement;
             individuoSelec = miTarjeta.userData as Individuo;
 
             input_nombre.SetValueWithoutNotify(individuoSelec.Nombre);
