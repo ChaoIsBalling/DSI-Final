@@ -10,6 +10,7 @@ namespace ProyectoFinal_namespace
 
         Label nombreLabel;
         Label apellidoLabel;
+        AtaqueDefensa atqDef;
 
         public Tarjeta(VisualElement tarjetaRoot, Individuo individuo)
         {
@@ -18,8 +19,8 @@ namespace ProyectoFinal_namespace
 
             nombreLabel = tarjetaRoot.Q<Label>("Nombre");
             apellidoLabel = tarjetaRoot.Q<Label>("Apellido");
+            atqDef = tarjetaRoot.Q("AtqDef") as AtaqueDefensa;
             tarjetaRoot.userData = myIndividuo;
-
             UpdateUI();
 
             myIndividuo.Cambio += UpdateUI;
@@ -29,6 +30,8 @@ namespace ProyectoFinal_namespace
         {
             nombreLabel.text = myIndividuo.Nombre;
             apellidoLabel.text = myIndividuo.Apellido;
+            atqDef.AtqEstado = 2;
+            atqDef.DefEstado = 1;
         }
     }
 }
