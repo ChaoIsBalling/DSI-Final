@@ -37,6 +37,36 @@ namespace ProyectoFinal_namespace
             }
         }
 
+        private int ataque;
+
+        public int Ataque
+        {
+            get { return ataque; }
+            set
+            {
+                if(value != ataque)
+                {
+                    ataque = value;
+                    Cambio?.Invoke();
+                }
+            }
+        }
+
+        private int defensa;
+
+        public int Defensa
+        {
+            get { return defensa; }
+            set
+            {
+                if (value != defensa)
+                {
+                    defensa = value;
+                    Cambio?.Invoke();
+                }
+            }
+        }
+
         public Individuo(string nombre, string apellido)
         {
             this.nombre = nombre;
