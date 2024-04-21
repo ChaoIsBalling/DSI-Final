@@ -79,7 +79,7 @@ namespace ProyectoFinal_namespace
 
         void NuevaTarjeta(ClickEvent evt)
         {
-            if (!toggleModificar.value)
+            if (!toggleModificar.value&&lista_individuos.Count()<10)
             {
                 userSelect = true;
                 VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Tarjeta");
@@ -102,7 +102,7 @@ namespace ProyectoFinal_namespace
         {
             miTarjeta = e.target as VisualElement;
             individuoSelec = miTarjeta.userData as Individuo;
-
+            Debug.Log(individuoSelec.Nombre);
             input_nombre.SetValueWithoutNotify(individuoSelec.Nombre);
             input_apellido.SetValueWithoutNotify(individuoSelec.Apellido);
             toggleModificar.value = true;
