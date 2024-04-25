@@ -2,14 +2,14 @@
     <Style src="project://database/Assets/ProyectoFinal.uss?fileID=7433441132597879392&amp;guid=d3918f6ecdc98cc40be8e1897e7c8288&amp;type=3#ProyectoFinal" />
     <ui:VisualElement name="Contenedor" style="flex-grow: 1; flex-direction: column; background-image: resource(&apos;Imagenes/Pagina&apos;);">
         <ui:VisualElement name="Arriba" style="flex-grow: 1; height: auto;">
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Titulo" style="justify-content: center; align-items: center; align-self: center;" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Titulo" style="justify-content: center; align-items: center; align-self: center; -unity-font: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=0ab7921eadf23a84abc3ca37da20cb34&amp;type=3#NotInter-Regular&apos;); -unity-font-style: bold;" />
         </ui:VisualElement>
         <ui:VisualElement name="Abajo" style="flex-grow: 1; flex-direction: row;">
             <ui:VisualElement name="Izda" style="flex-grow: 1; background-color: rgb(46, 135, 3); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; max-width: 250px;">
                 <ui:VisualElement name="top" style="flex-grow: 1; flex-direction: row;">
-                    <ui:VisualElement name="parrot" style="flex-grow: 1; background-image: resource(&apos;Imagenes/parrot&apos;); min-height: 50px;" />
-                    <ui:VisualElement name="penguin" style="flex-grow: 1; background-image: resource(&apos;Imagenes/penguin&apos;); min-height: 50px;" />
-                    <ui:VisualElement name="walrus" style="flex-grow: 1; background-image: resource(&apos;Imagenes/walrus&apos;); min-height: 50px;" />
+                    <ui:VisualElement name="parrot" class="cabeza" style="flex-grow: 1; background-image: resource(&apos;Imagenes/parrot&apos;); min-height: 50px;" />
+                    <ui:VisualElement name="penguin" class="cabeza" style="flex-grow: 1; background-image: resource(&apos;Imagenes/penguin&apos;); min-height: 50px;" />
+                    <ui:VisualElement name="walrus" class="cabeza" style="flex-grow: 1; background-image: resource(&apos;Imagenes/walrus&apos;); min-height: 50px;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="mid-nombre" style="flex-grow: 1;">
                     <ui:TextField picking-mode="Ignore" label="Nombre" value="filler text" name="InputNombre" />
