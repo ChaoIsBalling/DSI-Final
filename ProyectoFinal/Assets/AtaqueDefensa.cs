@@ -101,6 +101,14 @@ public class AtaqueDefensa : VisualElement
         def3.style.width = 30;
         def3.style.height = 30;
 
+        atq1.pickingMode= PickingMode.Ignore;
+        atq2.pickingMode = PickingMode.Ignore;
+        atq3.pickingMode = PickingMode.Ignore;
+
+        def1.pickingMode = PickingMode.Ignore;
+        def2.pickingMode = PickingMode.Ignore;
+        def3.pickingMode = PickingMode.Ignore;
+
         hierarchy.Add(atq1);
         hierarchy.Add(atq2);
         hierarchy.Add(atq3);

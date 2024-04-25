@@ -98,6 +98,7 @@ namespace ProyectoFinal_namespace
                 userSelect = true;
                 VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Tarjeta");
                 VisualElement tarjetaPlantilla = plantilla.Instantiate();
+               
                 miTarjeta = tarjetaPlantilla;
 
                 contenedor_dcha.Add(tarjetaPlantilla);
