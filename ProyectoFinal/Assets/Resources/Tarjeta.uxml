@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Lab6_tarjeta.uss?fileID=7433441132597879392&amp;guid=434754b089d31dc4cb8e98c9c9d18cce&amp;type=3#Lab6_tarjeta" />
     <ui:VisualElement name="Tarjeta" picking-mode="Ignore" class="tarjeta" style="flex-grow: 1; width: 200px; height: 150px;">
-        <ui:VisualElement name="Arriba" style="flex-grow: 1; flex-direction: row; height: auto;">
+        <ui:VisualElement name="Arriba" picking-mode="Ignore" style="flex-grow: 1; flex-direction: row; height: auto;">
             <ui:VisualElement name="cabeza" picking-mode="Ignore" style="flex-grow: 1; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-image: resource(&apos;Imagenes/giraffe&apos;); width: 80px; height: 90px;" />
-            <AtaqueDefensa name="AtqDef" style="flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; align-self: flex-start; width: 90px; height: 90px;" />
+            <AtaqueDefensa name="AtqDef" picking-mode="Ignore" style="flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-end; align-self: flex-start; width: 90px; height: 90px;" />
         </ui:VisualElement>
         <ui:VisualElement name="mid" picking-mode="Ignore" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="nombre" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nombre" picking-mode="Ignore" />
