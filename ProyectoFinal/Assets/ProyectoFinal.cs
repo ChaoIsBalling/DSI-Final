@@ -44,7 +44,7 @@ namespace ProyectoFinal_namespace
             walrus = root.Q<VisualElement>("walrus");
 
             titulo = root.Q<Label>("Titulo");
-            titulo.style.fontSize = 150;
+            titulo.style.fontSize = 140;
             titulo.style.unityTextOutlineWidth = 2;
             titulo.style.unityTextOutlineColor = new Color(0f, 0f, 0f);
             titulo.text = @"<color=""white""><gradient=""Titulo"">Se Reclutan Aventureros</gradient>";
